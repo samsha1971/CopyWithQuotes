@@ -1,9 +1,5 @@
-[{
-  "id": "edit",
-  "children": [{
-    "id": "copy-with-quotes",
-    "caption": "Copy with quotes",
-    "children": [{
+[
+	{
       "caption": "Java/C#",
       "command": "cwq_java_csharp"
     }, {
@@ -18,6 +14,5 @@
     }, {
       "caption": "Obj-C",
       "command": "cwq_objc"
-    }]
-  }]
-}]
+    }
+]

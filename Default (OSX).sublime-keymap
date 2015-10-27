@@ -1,0 +1,16 @@
+[{
+  "keys": ["ctrl+alt+0"],
+  "command": "cwq_java_csharp"
+}, {
+  "keys": ["ctrl+alt+1"],
+  "command": "cwq_cpp"
+}, {
+  "keys": ["ctrl+alt+2"],
+  "command": "cwq_php_perl"
+}, {
+  "keys": ["ctrl+alt+3"],
+  "command": "cwq_delphi"
+}, {
+  "keys": ["ctrl+alt+4"],
+  "command": "cwq_objc"
+}]

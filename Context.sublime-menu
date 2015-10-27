@@ -1,18 +1,19 @@
 [{
-    "caption": "Copy with quotes C",
+    "caption": "Copy with quotes",
     "children": [{
       "caption": "Java/C#",
-      "command": "cwq0"
+      "command": "cwq_java_csharp"
     }, {
       "caption": "C/C++",
-      "command": "cwq1"
+      "command": "cwq_cpp"
     }, {
       "caption": "PHP/Perl",
-      "command": "cwq2"
+      "command": "cwq_php_perl"
     }, {
       "caption": "Delphi",
-      "command": "cwq3"
+      "command": "cwq_delphi"
     }, {
       "caption": "Obj-C",
-      "command": "cwq4"
+      "command": "cwq_objc"
     }]
+}]

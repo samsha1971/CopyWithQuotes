@@ -1,0 +1,20 @@
+{
+	"schema_version": "1.0",
+	"packages": [
+		{
+			"name": "Copy with quotes",
+			"description": "Copy with quotes",
+			"author": "Sam Sha",
+			"homepage": "https://github.com/samsha1971/CopyWithQuotes",
+			"last_modified": "",
+			"platforms": {
+				"*": [
+					{
+						"version": "1.0.0",
+						"url": "https://github.com/samsha1971/CopyWithQuotes.git"
+					}
+				]
+			}
+		}
+	]
+}
