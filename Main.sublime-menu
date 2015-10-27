@@ -1,0 +1,23 @@
+[{
+  "id": "Edit",
+  "children": [{
+    "id": "copy-with-quotes",
+    "caption": "Copy with quotes",
+    "children": [{
+      "caption": "Java/C#",
+      "command": "cwq0"
+    }, {
+      "caption": "C/C++",
+      "command": "cwq1"
+    }, {
+      "caption": "PHP/Perl",
+      "command": "cwq2"
+    }, {
+      "caption": "Delphi",
+      "command": "cwq3"
+    }, {
+      "caption": "Obj-C",
+      "command": "cwq4"
+    }]
+  }]
+}]

@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "url": "https://github.com/xxx",
+  "platforms": [
+    "*"
+  ],
+  "description": "Copy with quotes",
+  "dependencies": [],
+  "sublime_text": "*"
+}
