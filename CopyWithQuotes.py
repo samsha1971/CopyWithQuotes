@@ -79,6 +79,7 @@ def quotes_java_csharp(str):
     if m1:
         sep = "\r\n"
     lines = re.split("\r\n|\n", str)
+    lines = [x for x in lines if x != '']
     content = ""
     count = 0
     for line in lines:
@@ -97,6 +98,7 @@ def quotes_cpp(str):
     if m1:
         sep = "\r\n"
     lines = re.split("\r\n|\n", str)
+    lines = [x for x in lines if x != '']
     content = ""
     count = 0
     for line in lines:
@@ -115,6 +117,7 @@ def quotes_php_perl(str):
     if m1:
         sep = "\r\n"
     lines = re.split("\r\n|\n", str)
+    lines = [x for x in lines if x != '']
     content = ""
     count = 0
     for line in lines:
@@ -133,6 +136,7 @@ def quotes_delphi(str):
     if m1:
         sep = "\r\n"
     lines = re.split("\r\n|\n", str)
+    lines = [x for x in lines if x != '']
     content = ""
     count = 0
     for line in lines:
@@ -150,6 +154,7 @@ def quotes_objc(str):
     if m1:
         sep = "\r\n"
     lines = re.split("\r\n|\n", str)
+    lines = [x for x in lines if x != '']
     content = '@"'
     count = 0
     for line in lines:
