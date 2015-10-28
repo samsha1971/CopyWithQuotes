@@ -98,11 +98,11 @@ def quotes_cpp(str):
     if m1:
         sep = "\r\n"
     lines = re.split("\r\n|\n", str)
-    lines = [x for x in lines if x != '']
+    #lines = [x for x in lines if x != '']
     content = ""
     count = 0
     for line in lines:
-        #line = line.replace('"', '\\"')
+        line = line.replace('"', '\\"')
         if (count < len(lines) - 1):
             content += '"' + line + '\\n"' + sep
         else:
@@ -140,6 +140,7 @@ def quotes_delphi(str):
     content = ""
     count = 0
     for line in lines:
+        line = line.replace("'", "''")
         if (count < len(lines) - 1):
             content += "'" + line + "\' + #13#10 + " + sep
         else:
