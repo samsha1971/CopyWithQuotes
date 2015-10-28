@@ -20,28 +20,56 @@ class CwqJavaCsharpCommand(sublime_plugin.TextCommand):
 class CwqCppCommand(sublime_plugin.TextCommand):
     # Convert Tabs To Spaces
     def run(self, edit):
-        sublime.status_message("not support C/C++ !")
+        for sel_region in self.view.sel():
+            if not sel_region.empty():
+                sel_text = self.view.substr(sel_region)
+                q_text = quotes_cpp(sel_text)
+                sublime.set_clipboard(q_text)
+                sublime.status_message("quotes for Java/C# !")
+            else:
+                sublime.status_message("quotes error !")
         return
 
 
 class CwqPhpPerlCommand(sublime_plugin.TextCommand):
     # Convert Tabs To Spaces
     def run(self, edit):
-        sublime.status_message("not support PHP/Perl !")
+        for sel_region in self.view.sel():
+            if not sel_region.empty():
+                sel_text = self.view.substr(sel_region)
+                q_text = quotes_php_perl(sel_text)
+                sublime.set_clipboard(q_text)
+                sublime.status_message("quotes for Java/C# !")
+            else:
+                sublime.status_message("quotes error !")
         return
 
 
 class CwqDelphiCommand(sublime_plugin.TextCommand):
     # Convert Tabs To Spaces
     def run(self, edit):
-        sublime.status_message("not support Delphi !")
+        for sel_region in self.view.sel():
+            if not sel_region.empty():
+                sel_text = self.view.substr(sel_region)
+                q_text = quotes_delphi(sel_text)
+                sublime.set_clipboard(q_text)
+                sublime.status_message("quotes for Java/C# !")
+            else:
+                sublime.status_message("quotes error !")
         return
 
 
 class CwqObjcCommand(sublime_plugin.TextCommand):
     # Convert Tabs To Spaces
     def run(self, edit):
-        sublime.status_message("not support Obj-c !")
+        for sel_region in self.view.sel():
+            if not sel_region.empty():
+                sel_text = self.view.substr(sel_region)
+                q_text = quotes_objc(sel_text)
+                sublime.set_clipboard(q_text)
+                sublime.status_message("quotes for Java/C# !")
+            else:
+                sublime.status_message("quotes error !")
         return
 
 
@@ -56,8 +84,79 @@ def quotes_java_csharp(str):
     for line in lines:
         line = line.replace('"', '\\"')
         if (count < len(lines) - 1):
-            content += '"' + line + '" + ' + sep
+            content += '"' + line + '\\n" + ' + sep
         else:
-            content += '"' + line + '";'
+            content += '"' + line + '"'
+        count += 1
+    return content
+
+
+def quotes_cpp(str):
+    sep = "\n"
+    m1 = re.search("\r\n", str)
+    if m1:
+        sep = "\r\n"
+    lines = re.split("\r\n|\n", str)
+    content = ""
+    count = 0
+    for line in lines:
+        line = line.replace('"', '\\"')
+        if (count < len(lines) - 1):
+            content += '"' + line + '\\n"' + sep
+        else:
+            content += '"' + line + '"'
+        count += 1
+    return content
+
+
+def quotes_php_perl(str):
+    sep = "\n"
+    m1 = re.search("\r\n", str)
+    if m1:
+        sep = "\r\n"
+    lines = re.split("\r\n|\n", str)
+    content = ""
+    count = 0
+    for line in lines:
+        line = line.replace('"', '\\"')
+        if (count < len(lines) - 1):
+            content += '"' + line + '\\n" . ' + sep
+        else:
+            content += '"' + line + '"'
+        count += 1
+    return content
+
+
+def quotes_delphi(str):
+    sep = "\n"
+    m1 = re.search("\r\n", str)
+    if m1:
+        sep = "\r\n"
+    lines = re.split("\r\n|\n", str)
+    content = ""
+    count = 0
+    for line in lines:
+        if (count < len(lines) - 1):
+            content += "'" + line + "\' + #13#10 + " + sep
+        else:
+            content += "'" + line + "'"
+        count += 1
+    return content
+
+
+def quotes_objc(str):
+    sep = "\n"
+    m1 = re.search("\r\n", str)
+    if m1:
+        sep = "\r\n"
+    lines = re.split("\r\n|\n", str)
+    content = '@"'
+    count = 0
+    for line in lines:
+        line = line.replace('"', '\\"')
+        if (count < len(lines) - 1):
+            content += line + "\\n\\" + sep
+        else:
+            content += line + '"'
         count += 1
     return content
