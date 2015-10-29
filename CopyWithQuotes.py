@@ -75,10 +75,7 @@ class CwqObjcCommand(sublime_plugin.TextCommand):
 
 def quotes_java_csharp(str):
     sep = "\n"
-    m1 = re.search("\r\n", str)
-    if m1:
-        sep = "\r\n"
-    lines = re.split("\r\n|\n", str)
+    lines = re.split(sep, str)
     #lines = [x for x in lines if x != '']
     content = ""
     count = 0
@@ -94,10 +91,7 @@ def quotes_java_csharp(str):
 
 def quotes_cpp(str):
     sep = "\n"
-    m1 = re.search("\r\n", str)
-    if m1:
-        sep = "\r\n"
-    lines = re.split("\r\n|\n", str)
+    lines = re.split(sep, str)
     #lines = [x for x in lines if x != '']
     content = ""
     count = 0
@@ -113,10 +107,7 @@ def quotes_cpp(str):
 
 def quotes_php_perl(str):
     sep = "\n"
-    m1 = re.search("\r\n", str)
-    if m1:
-        sep = "\r\n"
-    lines = re.split("\r\n|\n", str)
+    lines = re.split(sep, str)
     #lines = [x for x in lines if x != '']
     content = ""
     count = 0
@@ -132,10 +123,7 @@ def quotes_php_perl(str):
 
 def quotes_delphi(str):
     sep = "\n"
-    m1 = re.search("\r\n", str)
-    if m1:
-        sep = "\r\n"
-    lines = re.split("\r\n|\n", str)
+    lines = re.split(sep, str)
     #lines = [x for x in lines if x != '']
     content = ""
     count = 0
@@ -151,10 +139,7 @@ def quotes_delphi(str):
 
 def quotes_objc(str):
     sep = "\n"
-    m1 = re.search("\r\n", str)
-    if m1:
-        sep = "\r\n"
-    lines = re.split("\r\n|\n", str)
+    lines = re.split(sep, str)
     #lines = [x for x in lines if x != '']
     content = '@"'
     count = 0
